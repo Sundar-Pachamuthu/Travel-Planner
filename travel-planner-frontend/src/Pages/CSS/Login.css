@@ -1,0 +1,19 @@
+.loginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background-color: none ;
+    color: none;
+}
+.formTU{
+    height: fit-content;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formTU p{
+    cursor: pointer;
+}
