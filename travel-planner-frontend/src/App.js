@@ -1,9 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavTop from './Components/Nav-top/NavTop';
+import NavLeft from './Components/Nav-left/NavLeft';
 
 function App() {
   return (
-    <h1>vanakam</h1>
+    <div>
+      <NavTop/>
+      <NavLeft/>
+    </div>
   );
 }
 
