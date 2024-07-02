@@ -39,7 +39,7 @@ const Login = () => {
   const login = async ()=>{
     console.log("login function exicuted", formData);
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    await fetch('http://localhost:3030/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
@@ -75,13 +75,6 @@ const Login = () => {
         Create an account? <span onClick={()=>{setState("Sign Up")}} > Click here </span></p>}
 
       </form>
-      {formData.name}
-      {formData.email}
-      {formData.password}
-
-
-
-
     </div>
   )
 }
