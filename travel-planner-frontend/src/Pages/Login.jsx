@@ -35,6 +35,28 @@ const Login = () => {
       }
 
   }
+
+  const login = async ()=>{
+    console.log("login function exicuted", formData);
+    let responseData;
+    await fetch('http://localhost:4000/login',{
+      method:'POST',
+      headers:{
+        Accept:'application/form-data',
+        'Content-Type':'application/json',
+      },
+      body:JSON.stringify(formData),
+    }).then((response)=> response.json())
+    .then((data)=>responseData=data)
+    if(responseData.success){
+      localStorage.setItem('auth-token',responseData.token);
+      window.location.replace("/");
+    }
+    else{
+      alert(responseData.errors )
+    }
+
+  }
   
 
 
@@ -46,7 +68,7 @@ const Login = () => {
         {state=== "Sign Up"? <input name='name' value={formData.name} onChange={onChange} type='text' placeholder='YOUR NAME' /> : <></>  }
         <input type="email" name='email' value={formData.email} onChange={onChange} placeholder='YOUR EMAIL' />
         <input type="password" name='password' value={formData.password} onChange={onChange} placeholder='YOUR PASSWORD' />
-        <button type='button' onClick={() => {state === "Sign Up"? signup() : signup() }}  > {state} </button>
+        <button type='button' onClick={() => {state === "Sign Up"? signup() : login() }}  > {state} </button>
         {state === "Sign Up"?<p className="loginsignup-login">
         Already have an account? <span onClick={()=>{setState("Login")}} > Login here </span>
         </p> :<p className="loginsignup-login">
