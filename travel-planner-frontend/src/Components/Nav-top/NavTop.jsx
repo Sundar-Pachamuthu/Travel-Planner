@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 import logo from '../../Components/Assets/TRIP-UP.webp'
 
 const NavTop = () => {
+
+  const removeToken = ()=> {localStorage.removeItem('auth-token')};
+  // removeToken();
+
+
+
+
   return (
     <div>
       <div className="logo">

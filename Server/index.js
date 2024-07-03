@@ -85,6 +85,92 @@ app.post('/login', async (req,res)=>{
 
 
 
+// schema for add trip
+
+const TripPlans = mongoose.model("TripPlans",{
+    id:{
+        type:Number,
+        require:true,
+    },
+    start:{
+        type:String,
+        require:true,
+    },
+    destination:{
+        type:String,
+        require:true,
+    },
+    start_date:{
+        type:Date,
+        require:true,
+    },
+    end_date:{
+        type:Date,
+        require:true,
+    },
+    mode:{
+        type:String,
+        require:true,
+    },
+    notes:{
+        type:String,
+        require:true,
+    },
+    date:{
+        type: Date,
+        default: Date.now,
+    },
+})
+
+app.post('/createTrip', async (req,res)=>{
+    let tripPlans = await TripPlans.find({});
+    let id;
+    if(tripPlans.length>0){
+        let last_tripPlan_array = tripPlans.slice(-1);
+        let last_tripPlan = last_tripPlan_array[0];
+        id = last_tripPlan.id + 1;
+    }
+    else{
+        id=1;
+    }
+    const tripPlan = new TripPlans({
+        id:id,
+        start:req.body.start,
+        destination:req.body.destination,
+        start_date:req.body.start_date,
+        end_date:req.body.end_date,
+        mode:req.body.mode,
+        notes:req.body.notes,
+    });
+    console.log(tripPlan);
+    await tripPlan.save();
+    console.log("TRIP PLAN ADDED");
+    res.json({
+        success:true,
+        start:req.body.start,
+    })
+})
+
+
+// api for get all trip plans
+app.get('/allTripPlans', async(req,res)=>{
+    let tripPlans = await TripPlans.find({});
+    console.log(" ALL TRIP PLANS ARE FETCHED");
+    res.send(tripPlans);
+})
+
+
+// api for delete a trip plan
+
+app.post('/deleteTripPlan', async (req,res)=>{
+    let trips = TripPlans.findOneAndDelete({id:req.body.id});
+    console.log("TRIP PLAN DELETED");
+    res.json({
+        success:true,
+        start:req.body.start,
+    })
+})
+
 
 app.listen(PORT,(error)=>{
     if(error){
