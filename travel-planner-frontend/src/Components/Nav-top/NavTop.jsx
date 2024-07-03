@@ -9,6 +9,11 @@ const NavTop = () => {
       <div className="logo">
         <img src={logo} alt="" />
         <p>TRIP-UP</p>
+        <div className="login-btn">
+            {localStorage.getItem('auth-token')?<button onClick={()=>{localStorage.removeItem('auth-token');window.location .replace('/')}}>Logout</button>:
+            <Link style={{textDecoration: 'none' }} to='/login'><button >Login</button></Link>}
+        </div>
+
       {/* <div className="welcome">
         <p>
         A travel planner for everyone<br/>

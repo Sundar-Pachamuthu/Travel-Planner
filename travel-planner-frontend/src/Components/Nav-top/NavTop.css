@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    height: fit-content;
     width: 100%;
+    flex-direction: row;
+    position: fixed !important;
+    top: 0px;
+    height: 100px;
     background-color: var(--backgroundColour);
 }
 .logo img{
@@ -38,4 +40,16 @@
         opacity: 0.3;
     }
     
+}
+.login-btn button{
+    color: var(--mainTextColour);
+    background: var(--backgroundColour);
+    box-shadow: 0px 0px 10px var(--mainTextColour);
+    padding: 20px 20px;
+    border-radius: 15px;
+    transition: 1s;
+    font-size: 1.5rem;
+    margin: 0% 400%;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
 }

@@ -3,7 +3,7 @@ import './CSS/Login.css'
 
 const Login = () => {
 
-  const [state,setState] = useState("Sign Up");
+  const [statee,setState] = useState("Login");
   const[formData,setFormData] = useState({
     name:"",
     password:"",
@@ -28,7 +28,7 @@ const Login = () => {
       .then((data)=>responseData=data)
       if(responseData.success){
         localStorage.setItem('auth-token',responseData.token);
-        window.location.replace("/");
+        window.location.replace("/page1");
       }
       else{
         alert(responseData.errors )
@@ -50,7 +50,7 @@ const Login = () => {
     .then((data)=>responseData=data)
     if(responseData.success){
       localStorage.setItem('auth-token',responseData.token);
-      window.location.replace("/");
+      window.location.replace("/page1");
     }
     else{
       alert(responseData.errors )
@@ -64,17 +64,17 @@ const Login = () => {
   return (
     <div className='loginForm'>
       <form action="" className="formTU">
-        <h1>{state}</h1>
-        {state=== "Sign Up"? <input name='name' value={formData.name} onChange={onChange} type='text' placeholder='YOUR NAME' /> : <></>  }
+        <h1>{statee}</h1>
+        {statee=== "Sign Up"? <input name='name' value={formData.name} onChange={onChange} type='text' placeholder='YOUR NAME' /> : <></>  }
         <input type="email" name='email' value={formData.email} onChange={onChange} placeholder='YOUR EMAIL' />
         <input type="password" name='password' value={formData.password} onChange={onChange} placeholder='YOUR PASSWORD' />
-        <button type='button' onClick={() => {state === "Sign Up"? signup() : login() }}  > {state} </button>
-        {state === "Sign Up"?<p className="loginsignup-login">
+        <button type='button' onClick={() => {statee === "Sign Up"? signup() : login() }}  > {statee} </button>
+        {statee === "Sign Up"?<p className="loginsignup-login">
         Already have an account? <span onClick={()=>{setState("Login")}} > Login here </span>
         </p> :<p className="loginsignup-login">
         Create an account? <span onClick={()=>{setState("Sign Up")}} > Click here </span></p>}
 
-      </form>
+      </form> 
     </div>
   )
 }

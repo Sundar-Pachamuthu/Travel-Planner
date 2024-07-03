@@ -1,0 +1,8 @@
+.filler1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    width: 100%;
+    background-color: pink;
+}
