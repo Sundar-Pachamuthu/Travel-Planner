@@ -163,7 +163,7 @@ app.get('/allTripPlans', async(req,res)=>{
 // api for delete a trip plan
 
 app.post('/deleteTripPlan', async (req,res)=>{
-    let trips = TripPlans.findOneAndDelete({id:req.body.id});
+    await TripPlans.findOneAndDelete({id:req.body.id});
     console.log("TRIP PLAN DELETED");
     res.json({
         success:true,

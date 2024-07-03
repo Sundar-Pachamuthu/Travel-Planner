@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './NavTop.css';
 import { Link } from 'react-router-dom';
 import logo from '../../Components/Assets/TRIP-UP.webp'
@@ -7,6 +7,9 @@ const NavTop = () => {
 
   const removeToken = ()=> {localStorage.removeItem('auth-token')};
   // removeToken();
+  // useEffect(()=>{
+  //   removeToken();
+  // })
 
 
 
