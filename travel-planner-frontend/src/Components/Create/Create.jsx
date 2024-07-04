@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
+import '../Create/Create.css';
 
 const Create = () => {
-
-  // const [start,setStart] = useState;
-  // const [destination,setDestination] = useState;
-  // const [sdate,setSdate] = useState;
-  // const [edate,setEdate] = useState;
-  // const [mode,setMode] = useState;
-  // const [notes,setNotes] = useState;
-
 
   const [tripDetails,setTripDetails] = useState({
     // user_id:"",
@@ -42,7 +35,7 @@ const Create = () => {
       }).then((response)=> response.json())
       .then((data)=>responseData=data)
       if(responseData.success){
-        alert("SUCCESS");
+        alert("TRIP PLAN ADDED");
         window.location.replace("/page1");
       }
       else{
@@ -67,12 +60,12 @@ const Create = () => {
 
             <div className="input-create">
               <h6>start date</h6>
-              <input type="date" placeholder='enter the start date' name='start_date' className='input' onChange={changehandler}  required />
+              <input type="text" placeholder='DD/MM/YYYY' name='start_date' className='input' onChange={changehandler}  required />
             </div>
 
             <div className="input-create">
               <h6>end date</h6>
-              <input type="date" placeholder='enter the end date' name='end_date' className='input' onChange={changehandler}  required />
+              <input type="text" placeholder='DD/MM/YYYY' name='end_date' className='input' onChange={changehandler}  required />
             </div>
 
             <div className="input-create">
@@ -91,7 +84,7 @@ const Create = () => {
               <input type="text" placeholder='notes about this trip' name='notes' className='input' onChange={changehandler}  />
             </div>
 
-            <button type='submit' onClick={() => {addTrip()}} > add trip</button>
+            <button type='submit' className='addtripbtn' onClick={() => {addTrip()}} > add trip</button>
             
         </form>
       </div>

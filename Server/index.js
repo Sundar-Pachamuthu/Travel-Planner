@@ -101,11 +101,11 @@ const TripPlans = mongoose.model("TripPlans",{
         require:true,
     },
     start_date:{
-        type:Date,
+        type:String,
         require:true,
     },
     end_date:{
-        type:Date,
+        type:String,
         require:true,
     },
     mode:{
@@ -159,6 +159,34 @@ app.get('/allTripPlans', async(req,res)=>{
     res.send(tripPlans);
 })
 
+
+// api for get trip id
+
+app.get('/getTripId/:id',(req,res) =>{
+    let id = req.params.id;
+    TripPlans.findById({_id:id})
+    .then(tripPlan =>res.json(tripPlan))
+    .catch(err => res.json(err))
+})
+
+// api for update trip
+
+app.put('/updateTrip/:id', async (req,res)=>{
+    const id = req.params.id;
+    let updateTrip = await TripPlans.findByIdAndUpdate({_id:id},{
+        start:req.body.start,
+        destination:req.body.destination,
+        start_date:req.body.start_date,
+        end_date:req.body.end_date,
+        mode:req.body.mode,
+        notes:req.body.notes,
+    })
+    .then(tripPlan => res.json(tripPlan))
+    .catch(err =>res.json(err))
+    console.log(updateTrip);
+    //  await res.send(updateTrip)
+    //  alert(" TRIP UPDATED")
+})
 
 // api for delete a trip plan
 

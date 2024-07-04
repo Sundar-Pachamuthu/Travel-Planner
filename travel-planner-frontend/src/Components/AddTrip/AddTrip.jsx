@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Await, Link } from 'react-router-dom';
-
+import './AddTrip.css'
 
 const AddTrip = () => {
 
@@ -46,10 +46,10 @@ const AddTrip = () => {
   return (
     <div  className='addtrip'>
       <div className="displaytrip">
-        <Link to='/create' > Add Trip+</Link>
+          <Link  style={{textDecoration:"none"}} to='/create' >  <h4> Add Trip+ </h4> </Link> 
         <table>
           <thread>
-            <tr>
+            <tr className='head'>
               <th>START</th>
               <th>DESTINATION</th>
               <th>START DATE</th>
@@ -61,16 +61,17 @@ const AddTrip = () => {
             </thread>
             <tbody>
               {allTripPlans.map((trip,i)=>{
-                return <tr key={i}>
-                  <td> $ {trip.start} </td>
+                return <tr key={i} className='list'>
+                  <td> {trip.start} </td>
                   <td> {trip.destination} </td>
                   <td> {trip.start_date} </td>
                   <td> {trip.end_date} </td>
                   <td> {trip.mode} </td>
                   <td> {trip.notes} </td>
-                  <td> <p> <Link to='/update' > update </Link> </p>
-                  <p onClick={()=>{deleteTripPlan(trip.id)}} >delete</p> </td>
-
+                  <td className='btnn' > <p> <Link to={`/update/${trip._id}`} className='updatebtn' > update </Link> </p>
+                  <p onClick={()=>{deleteTripPlan(trip.id)}} className='deletebtn' > delete </p>
+                  </td>
+                {/* <hr /> */}
                   </tr>
               })}
             </tbody>
