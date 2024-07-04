@@ -11,7 +11,9 @@ app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect('mongodb://localhost:27017/TRAVEL-PLANNER');
+// mongoose.connect('mongodb://localhost:27017/TRAVEL-PLANNER');
+
+mongoose.connect("mongodb+srv://sundarkarthick574:Moon@cluster0.qtuqvrt.mongodb.net/TripUp");
 
 // schema creation for user model
 
