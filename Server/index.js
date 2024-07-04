@@ -146,7 +146,7 @@ app.post('/createTrip', async (req,res)=>{
     });
     console.log(tripPlan);
     await tripPlan.save();
-    // console.log("TRIP PLAN ADDED");
+    console.log("TRIP PLAN ADDED");
     res.json({
         success:true,
         start:req.body.start,
@@ -157,7 +157,7 @@ app.post('/createTrip', async (req,res)=>{
 // api for get all trip plans
 app.get('/allTripPlans', async(req,res)=>{
     let tripPlans = await TripPlans.find({});
-    // console.log(" ALL TRIP PLANS ARE FETCHED");
+    console.log(" ALL TRIP PLANS ARE FETCHED");
     res.send(tripPlans);
 })
 
@@ -185,7 +185,7 @@ app.put('/updateTrip/:id', async (req,res)=>{
     })
     .then(tripPlan => res.json(tripPlan))
     .catch(err =>res.json(err))
-    // console.log(updateTrip);
+    console.log(updateTrip);
     //  await res.send(updateTrip)
     //  alert(" TRIP UPDATED")
 })
@@ -194,7 +194,7 @@ app.put('/updateTrip/:id', async (req,res)=>{
 
 app.post('/deleteTripPlan', async (req,res)=>{
     await TripPlans.findOneAndDelete({id:req.body.id});
-    // console.log("TRIP PLAN DELETED");
+    console.log("TRIP PLAN DELETED");
     res.json({
         success:true,
         start:req.body.start,
@@ -204,9 +204,9 @@ app.post('/deleteTripPlan', async (req,res)=>{
 
 app.listen(PORT,(error)=>{
     if(error){
-        // console.log(`Error: ${error}`);
+        console.log(`Error: ${error}`);
     }
     else{
-        // console.log(`SERVER IS RUNNING ON PORT: ${PORT}`);
+        console.log(`SERVER IS RUNNING ON PORT: ${PORT}`);
     }
 })
