@@ -72,6 +72,7 @@
     right: 50px;
     top: 700px;
     background-color: rgba(255, 255, 255, 0.461);
+    box-shadow: 0px 0px 20px black;
     padding: 50px;
     border-radius: 30px;
     text-align: center;
@@ -97,6 +98,7 @@
     left: 50px;
     top: 1000px;
     background-color: rgba(255, 255, 255, 0.461);
+    box-shadow: 0px 0px 20px black;
     padding: 50px;
     border-radius: 30px;
     text-align: center;

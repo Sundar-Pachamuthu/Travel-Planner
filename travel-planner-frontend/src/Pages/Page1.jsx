@@ -5,7 +5,7 @@ import AddTrip from '../Components/AddTrip/AddTrip'
 const Page1 = () => {
   return (
     <div>
-      <Filler1/>
+      {/* <Filler1/> */}
       <AddTrip/>
     </div>
   )
