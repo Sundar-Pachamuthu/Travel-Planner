@@ -14,7 +14,7 @@ const Update = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    axios.get('http://localhost:3030/getTripId/'+id)
+    axios.get('https://travel-planner-4mrm.onrender.com/getTripId/'+id)
     .then(result => {console.log(result)
       setStart(result.data.start)
       setDestination(result.data.destination)
@@ -29,7 +29,7 @@ const Update = () => {
   // const updateTrip = async ()=>{
   //   console.log("Add Trip function exicuted", tripDetails);
   //   let responseData;
-  //   await fetch('http://localhost:3030/updateTrip',{
+  //   await fetch('https://travel-planner-4mrm.onrender.com/updateTrip',{
   //     method:'PUT',
   //     headers:{
   //       Accept:'application/form-data',
@@ -55,7 +55,7 @@ const Update = () => {
 
   const updateTrip = async ()=> {
     console.log("update function called");
-    axios.put("http://localhost:3030/updateTrip" + id, {start,destination,start_date,end_date,mode,notes})
+    axios.put("https://travel-planner-4mrm.onrender.com/updateTrip" + id, {start,destination,start_date,end_date,mode,notes})
     .then(result =>{
       console.log(result)
       navigate('/page1')

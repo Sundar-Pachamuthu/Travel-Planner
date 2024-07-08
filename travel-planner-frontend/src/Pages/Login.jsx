@@ -17,7 +17,7 @@ const Login = () => {
   const signup = async ()=>{
     console.log("signup function exicuted", formData);
       let responseData;
-      await fetch('http://localhost:3030/signup',{
+      await fetch('https://travel-planner-4mrm.onrender.com/signup',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
@@ -39,7 +39,7 @@ const Login = () => {
   const login = async ()=>{
     console.log("login function exicuted", formData);
     let responseData;
-    await fetch('http://localhost:3030/login',{
+    await fetch('https://travel-planner-4mrm.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/form-data',

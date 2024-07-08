@@ -25,7 +25,7 @@ const Create = () => {
     const addTrip = async ()=>{
       console.log("Add Trip function exicuted", tripDetails);
       let responseData;
-      await fetch('http://localhost:3030/createTrip',{
+      await fetch('https://travel-planner-4mrm.onrender.com/createTrip',{
         method:'POST',
         headers:{
           Accept:'application/form-data',

@@ -18,7 +18,7 @@ const AddTrip = () => {
   const [allTripPlans, setAllTripPlans] = useState([]);
 
   const fetchTripPlans = async () => {
-    await fetch('http://localhost:3030/allTripPlans')  
+    await fetch('https://travel-planner-4mrm.onrender.com/allTripPlans')  
     .then((res)=>res.json())
     .then((data=>{setAllTripPlans(data)}));
   }
@@ -28,7 +28,7 @@ const AddTrip = () => {
   },[])
 
   const deleteTripPlan = async(id) =>{
-    await fetch('http://localhost:3030/deleteTripPlan',{
+    await fetch('https://travel-planner-4mrm.onrender.com/deleteTripPlan',{
       method:'POST',
       headers: {
         Accept: 'application/json',

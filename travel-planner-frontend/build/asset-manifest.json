@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.732d9991.css",
+    "main.js": "/static/js/main.f810609d.js",
+    "static/js/453.73c425de.chunk.js": "/static/js/453.73c425de.chunk.js",
+    "static/media/waterFall.jpg": "/static/media/waterFall.4f99d319143de7d287ab.jpg",
+    "static/media/mountain.jpg": "/static/media/mountain.de1d84e1afe70e5a743e.jpg",
+    "static/media/TRIP-UP.webp": "/static/media/TRIP-UP.d7c810af289e636a7973.webp",
+    "index.html": "/index.html",
+    "main.732d9991.css.map": "/static/css/main.732d9991.css.map",
+    "main.f810609d.js.map": "/static/js/main.f810609d.js.map",
+    "453.73c425de.chunk.js.map": "/static/js/453.73c425de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.732d9991.css",
+    "static/js/main.f810609d.js"
+  ]
+}
