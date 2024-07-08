@@ -186,8 +186,8 @@ app.put('/updateTrip/:id', async (req,res)=>{
     .then(tripPlan => res.json(tripPlan))
     .catch(err =>res.json(err))
     console.log(updateTrip);
-    //  await res.send(updateTrip)
-    //  alert(" TRIP UPDATED")
+     await res.send(updateTrip)
+     alert(" TRIP UPDATED")
 })
 
 // api for delete a trip plan
